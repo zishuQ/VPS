@@ -1,0 +1,35 @@
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+.score {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+#canvas {
+	border: 1px solid #333;
+	margin-bottom: 20px;
+}
+
+#startBtn {
+	font-size: 24px;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+#startBtn:hover {
+	background-color: #3E8E41;
+}
+
