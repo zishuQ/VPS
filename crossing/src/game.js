@@ -51,7 +51,7 @@ MG.game = (function () {
                     return 'Love';
                 } else if (mLevel == 5) {
                     return 'I';
-                } else if (mLevel == 10) {
+                } else if (mLevel == 1) {
                     return 'You';
                 } else {
                     return 'CLICK TO CONTINUE';
