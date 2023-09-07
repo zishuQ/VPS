@@ -84,18 +84,71 @@
 		  <!-- 使用<center>标签包裹链接 -->
 		  <center>
 			  <h1 style="animation: bounce 0.3s infinite; color: ghostwhite;">和我一起跳跳跳！！！</h1>
-			  <a href="myFlowers">花园</a><br>
+			  <a href="myFlowers"></a><br>
 			  <a href="earth/">地球的旋转</a><br>
 			  <a href="saolei/">扫雷</a><br>
 			  <a href="snake/">贪吃蛇</a><br>
 			  <a href="llk/">连连看</a><br>
 			  <a href="crossing/">穿越</a><br>
+			  <a href="http://117.50.175.42:7070">FileBrowser</a><br>
+			  <a href="http://117.50.175.42:4000">myBlog</a><br>
+			  <a href="http://117.50.175.42:8000">djangoDemoProject</a><br>
+			  <a href="http://117.50.175.42:4400">Docker tutorial</a><br>
 			  <h1 style="animation: bounce 0.1s infinite; color: rgb(248, 255, 252);">😆跳快点啦😆</h1>
 		  </center>
 		  <div id='1'><span class='2'>欢迎你的到来！</span></div>
 		  <p style="animation: scroll 10s infinite linear; color: aquamarine; font-size: 36px;">一二三四五，上山打老虎。哈哈哈哈哈哈哈哈哈哈</p>
 		  <p style="animation: scroll 5s infinite linear; color: rgb(127, 255, 200); font-size: 36px;">我一定会回来的！！！！</p>
 		  <p style="animation: scroll 3s infinite linear; color: rgb(163, 127, 255); font-size: 36px;">哈哈！！！！哈哈哈！！！哈哈哈！！！哈哈！哈！哈哈哈！哈！！哈！哈！哈！！！哈</p>
+		    <div class="container">
+        <style>
+            #emoji1 {
+                position: fixed;
+                z-index: 9999;
+                font-size: 5em;
+                transition: left 0.1s ease-out, top 0.1s ease-out;
+            }
 
+            #emoji2 {
+                position: fixed;
+                z-index: 9999;
+                font-size: 1em;
+                transition: left 0.15s ease-out, top 0.15s ease-out;
+            }
+        </style>
+        <div id="emoji1" style="left: 284.8px; top: 551.6px;">😍</div>
+        <div id="emoji2" style="left: 284.8px; top: 551.6px;">😈</div>
+        <script>
+            var emoji1 = document.getElementById('emoji1');
+            var emoji2 = document.getElementById('emoji2');
+            var currentX = 0;
+            var currentY = 0;
+            var targetX = 0;
+            var targetY = 0;
+            var easing = 0.1;
+
+            document.addEventListener('mousemove', function (e) {
+                targetX = e.clientX;
+                targetY = e.clientY;
+            });
+
+            function animateEmoji() {
+                var dx = targetX - currentX;
+                var dy = targetY - currentY;
+
+                currentX += dx * easing;
+                currentY += dy * easing;
+
+                emoji1.style.left = currentX + 'px';
+                emoji1.style.top = currentY + 'px';
+
+                emoji2.style.left = currentX + 'px';
+                emoji2.style.top = currentY + 'px';
+
+                requestAnimationFrame(animateEmoji);
+            }
+            animateEmoji();
+        </script>
+    </div>
 	</body>
 </html>

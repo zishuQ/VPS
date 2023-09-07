@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
+  <meta charset="UTF-8">
   <title>扫雷</title>
   <style>
     #bar {
@@ -45,9 +46,9 @@
 <body ondragstart='return false' oncontextmenu='self.event.returnValue=false'>
 
   <div id='bar'>
-    <span class='bar'>总雷数：<label id='count'>0</label></span>
-    <span class='bar'>标记数：<label id='sign'>0</label></span>
-    <span class='bar'>计时：<label id='time'>0</label>s</span>
+    <span class='bar'>total :<label id='count'>0</label></span>
+    <span class='bar'>labels :<label id='sign'>0</label></span>
+    <span class='bar'>time :<label id='time'>0</label>s</span>
   </div>
   <table id='grid'></table>
 
@@ -153,7 +154,7 @@
 
           if (block.isMine) {
             //踩雷
-            block.innerHTML = '雷'; //显示为 '雷'
+            block.innerHTML = '🎆'; //显示为 '雷'
             //遍历矩阵打开所有的地雷方格
             for (let i = 0; i < row; i++) {
               for (let j = 0; j < col; j++) {
@@ -161,12 +162,12 @@
                 block = grid[i][j];
                 if (!block.isOpen && block.isMine) {
                   op(block); //设置打开状态和样式
-                  block.innerHTML = '雷'; //显示为 '雷'
+                  block.innerHTML = '🎇'; //显示为 '雷'
                 }
               }
             }
             //提示游戏结束
-            alert("游戏结束");
+            alert("game over!");
           } else if (block.count === 0) {
             //打开计雷数为0的方格
             //遍历九宫格内的方格
@@ -190,8 +191,8 @@
       else if (e.button === 2) {
 
         let block = grid[_i][_j];
-        if (block.innerHTML !== '★') {
-          block.innerHTML = '★';
+        if (block.innerHTML !== '🎈') {
+          block.innerHTML = '🎈';
           ++sign.innerText;
         } else {
           block.innerHTML = '';
@@ -207,7 +208,7 @@
           }
         }
       }
-      alert("游戏胜利");
+      alert("You win!");
     }
   </script>
 </body>

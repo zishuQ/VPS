@@ -49,11 +49,11 @@ MG.game = (function () {
             text: function () {
                 if (mLevel == 2) {
                     return 'Love';
-                } else if (mLevel == 5) {
+                }/* else if (mLevel == 5) {
                     return 'I';
                 } else if (mLevel == 1) {
                     return 'You';
-                } else {
+                }*/ else {
                     return 'CLICK TO CONTINUE';
                 }
             },
