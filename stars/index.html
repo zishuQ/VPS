@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>zishuQ space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars space</title>
+    <!-- 出处: 山羊の前端小窝 -->
     <style>
         * {
             padding: 0;
@@ -12,20 +14,10 @@
 
         body {
             width: 100%;
-            height: 100%;
-            background-color: rgba(25, 206, 226, 0.975);
-            /* 创建一个线性渐变背景 */
-            background: linear-gradient(to right, red, rgb(106, 0, 255));
-
-            /* 裁剪背景到文本区域 */
-            background-clip: text;
-
-            /* 设置文本阴影为黑色 */
-            text-shadow: 2px 2px 4px black;
-
-            /* 应用bounce动画到文本 */
-            animation: bounce 1s infinite;
-
+            height: 100vh;
+            /* 背景渐变 */
+            background-image: linear-gradient(-225deg, #231557 0%,
+                    #43107a 29%, #FF1361 100%);
         }
 
         canvas {
@@ -33,140 +25,13 @@
             width: 100%;
             height: 100%;
         }
-
-        /* 创建一个名为scroll的动画 */
-        @keyframes scroll {
-
-            /* 定义0%时间点的样式 */
-            0% {
-                transform: translateX(100%);
-            }
-
-            /* 定义100%时间点的样式 */
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* 创建一个名为bounce的动画 */
-        @keyframes bounce {
-
-            /* 定义0%时间点的样式 */
-            0% {
-                transform: translateY(0);
-            }
-
-            /* 定义50%时间点的样式 */
-            50% {
-                transform: translateY(-30px);
-            }
-
-            /* 定义100%时间点的样式 */
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        canvas {
-            border: 1px solid white;
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* 添加以下样式 */
-        a {
-            text-align: center;
-            font-size: 20px;
-            color: rgba(9, 242, 94, 0.87);
-            /* 改变颜色 */
-            font-family: Comic Sans MS;
-            /* 改变字体 */
-        }
-
-        div {
-            text-align: center;
-            font-size: 20px;
-            color: rgb(216, 15, 243);
-            /* 改变颜色 */
-            font-family: Comic Sans MS;
-            /* 改变字体 */
-        }
     </style>
 </head>
 
 <body>
-    <!-- 使用<center>标签包裹链接 -->
-    <center>
-        <h1 style="animation: bounce 0.3s infinite; color: ghostwhite;">和我一起跳跳跳！！！</h1>
-        <a href="myFlowers"></a><br>
-        <a href="earth/">地球的旋转</a><br>
-        <a href="saolei/">扫雷</a><br>
-        <a href="snake/">贪吃蛇</a><br>
-        <a href="llk/">连连看</a><br>
-        <a href="crossing/">穿越</a><br>
-        <a href="stars/">星星</a><br>
-        <a href="http://117.50.175.42:7070">FileBrowser</a><br>
-        <a href="http://117.50.175.42:4000">myBlog</a><br>
-        <a href="http://117.50.175.42:8000">djangoDemoProject</a><br>
-        <a href="http://117.50.175.42:4400">Docker tutorial</a><br>
-        <h1 style="animation: bounce 0.1s infinite; color: rgb(248, 255, 252);">😆跳快点啦😆</h1>
-    </center>
-    <div id='1'><span class='2'>欢迎你的到来！</span></div>
-    <p style="animation: scroll 10s infinite linear; color: aquamarine; font-size: 36px;">一二三四五，上山打老虎。哈哈哈哈哈哈哈哈哈哈</p>
-    <p style="animation: scroll 5s infinite linear; color: rgb(127, 255, 200); font-size: 36px;">我一定会回来的！！！！</p>
-    <p style="animation: scroll 3s infinite linear; color: rgb(163, 127, 255); font-size: 36px;">
-        哈哈！！！！哈哈哈！！！哈哈哈！！！哈哈！哈！哈哈哈！哈！！哈！哈！哈！！！哈</p>
-    <div class="container">
-        <style>
-            #emoji1 {
-                position: fixed;
-                z-index: 9999;
-                font-size: 5em;
-                transition: left 0.1s ease-out, top 0.1s ease-out;
-            }
 
-            #emoji2 {
-                position: fixed;
-                z-index: 9999;
-                font-size: 1em;
-                transition: left 0.15s ease-out, top 0.15s ease-out;
-            }
-        </style>
-        <div id="emoji1" style="left: 284.8px; top: 551.6px;">😍</div>
-        <div id="emoji2" style="left: 284.8px; top: 551.6px;">😈</div>
-        <script>
-            var emoji1 = document.getElementById('emoji1');
-            var emoji2 = document.getElementById('emoji2');
-            var currentX = 0;
-            var currentY = 0;
-            var targetX = 0;
-            var targetY = 0;
-            var easing = 0.1;
+    <canvas></canvas>
 
-            document.addEventListener('mousemove', function (e) {
-                targetX = e.clientX;
-                targetY = e.clientY;
-            });
-
-            function animateEmoji() {
-                var dx = targetX - currentX;
-                var dy = targetY - currentY;
-
-                currentX += dx * easing;
-                currentY += dy * easing;
-
-                emoji1.style.left = currentX + 'px';
-                emoji1.style.top = currentY + 'px';
-
-                emoji2.style.left = currentX + 'px';
-                emoji2.style.top = currentY + 'px';
-
-                requestAnimationFrame(animateEmoji);
-            }
-            animateEmoji();
-        </script>
-        <canvas></canvas>
-    </div>
 </body>
 <script>
 
